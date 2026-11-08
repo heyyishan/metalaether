@@ -1,0 +1,9 @@
+build/
+*.aether
+*.metallib
+*.air
+*.csv
+__pycache__/
+*.so
+*.dylib
+.DS_Store

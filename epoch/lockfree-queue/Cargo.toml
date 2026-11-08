@@ -1,0 +1,30 @@
+[package]
+name = "lockfree-queue"
+version = "0.1.0"
+edition = "2021"
+description = "A verified lock-free MPMC queue with epoch-based reclamation"
+
+[dependencies]
+
+[dev-dependencies]
+loom = "0.7"
+criterion = { version = "0.5", features = ["html_reports"] }
+crossbeam-queue = "0.3"
+rand = "0.8"
+
+[features]
+loom = []
+
+[[bench]]
+name = "benchmarks"
+harness = false
+
+[profile.bench]
+opt-level = 3
+lto = "fat"
+codegen-units = 1
+
+[profile.release]
+opt-level = 3
+lto = "fat"
+codegen-units = 1
